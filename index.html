@@ -35,7 +35,7 @@
                         </div>
                 <div class="col-12">
                     <div class="form-group" style="margin-top: 20px">
-                        <input type="button" value="Login" class="btn btn-primary"
+                        <input type="button"  value="Login" onclick="login()" class="btn btn-primary"
                                style="width: 100%">
                     </div>
                 </div>
@@ -64,15 +64,15 @@
             <div class="row" style="margin: 0">
                 <div class="col-12">
                     <div class="form-group>">
-                        <label for="registerEmail">Email address</label>
-                        <input type="email" class="form-control" id="registerEmail">
+                        <label for="fullName">Full Name</label>
+                        <input type="text" class="form-control" id="fullName">
 
                     </div>
                 </div>
                 <div class="col-12">
                     <div class="form-group>">
-                        <label for="fullName">Email address</label>
-                        <input type="text" class="form-control" id="fullName">
+                        <label for="registerEmail">Email address</label>
+                        <input type="email" class="form-control" id="registerEmail">
 
                     </div>
                 </div>
@@ -84,7 +84,7 @@
                 </div>
                 <div class="col-12">
                     <div class="form-group" style="margin-top: 20px">
-                        <input type="button" value="Create An Account" class="btn btn-success"
+                        <input type="button" onclick="createUser()" value="Create An Account" class="btn btn-success"
                                style="width: 100%">
                     </div>
                 </div>
@@ -99,11 +99,14 @@
     </div>
 </div>
 
+<!--end of sign up process-->
 
 
 
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+
+<script src="js/jQuery.js"></script>
+<script src="js/bcrypt.min.js"></script>
 <script src="js/index.js"></script>
 </body>
 </html>
