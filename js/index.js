@@ -64,9 +64,30 @@ const clearAndLoad=(element)=>{
 
 }
 
-const createCustomer=()=>{}
+const customerArray=[];
 
-const findCustomer=(id)=>{}
+const createCustomer=()=>{
+    const customer = new Customer(
+        $('#name').val(),
+        $('#address').val(),
+        parseFloat($('#salary').val()),
+        $('#nic').val(),
+        );
+
+    let existsData = customerArray.find(el=>el.el.nic==customer.nic);
+
+    if (existsData) {
+        alert('customer already exists');
+        return;
+    }
+
+    customerArray.push(customer);
+
+}
+
+const findCustomer=(id)=>{
+
+}
 
 const updateCustomer=(id)=>{}
 
