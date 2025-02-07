@@ -86,6 +86,12 @@ const createCustomer=()=>{
 }
 
 const findCustomer=(id)=>{
+    const customer = customerArray.find(el=>el.nic==id);
+    if (customer) {
+        console.log(customer);
+    }else{
+        alert('customer not found');
+    }
 
 }
 
