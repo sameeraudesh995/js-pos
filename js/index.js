@@ -16,8 +16,8 @@ const createUser=()=>{
     const email=document.getElementById('registerEmail').value;
     const password=document.getElementById('registerPassword').value;
 
-   // const hash= bcrypt.hashSync(password,bcrypt.genSaltSync(10));
-   // console.log(hash);
+    // const hash= bcrypt.hashSync(password,bcrypt.genSaltSync(10));
+    // console.log(hash);
 
 
     let createdUser=new User(fullName, email, password);
@@ -29,8 +29,6 @@ const createUser=()=>{
     userArray.push(createdUser);
     console.log(userArray)
 }
-
-
 const login=()=>{
     const email=$('#email').val();
     const password=$('#password').val();
@@ -48,58 +46,40 @@ const login=()=>{
         alert('user not found');
     }
 }
-
-
-
+// const clearAndLoad=(element)=>{
+//
+// }
 class Customer{
     constructor(name, address, salary, nic) {
-       this.name=name;
-       this.address=address;
-       this.salary=salary;
-       this.nic=nic;
+        this.name=name;
+        this.address=address;
+        this.salary=salary;
+        this.nic=nic;
     }
-}
-
-const clearAndLoad=(element)=>{
-
 }
 
 const customerArray=[];
 
 const createCustomer=()=>{
-    const customer = new Customer(
+    const customer =new Customer(
         $('#name').val(),
         $('#address').val(),
-        parseFloat($('#salary').val()),
-        $('#nic').val(),
-        );
-
-    let existsData = customerArray.find(el=>el.el.nic==customer.nic);
-
-    if (existsData) {
-        alert('customer already exists');
+        $('#salary').val(),
+        $('#nic').val()
+    );
+    if (customerArray.find(e=>e.nic==customer.nic)){
+        alert('nic already exists');
         return;
     }
-
+    console.log(customer)
     customerArray.push(customer);
-
+    console.log(customerArray);
 }
 
-const findCustomer=(id)=>{
-    const customer = customerArray.find(el=>el.nic==id);
-    if (customer) {
+const findCustomer=()=>{
+    const nic=$('#nic').val();
+    const customer=customerArray.find(e=>e.nic==nic);
+    if(customer){
         console.log(customer);
-    }else{
-        alert('customer not found');
     }
-
 }
-
-const updateCustomer=(id)=>{}
-
-const deleteCustomer=(id)=>{}
-
-
-const getAllCustomer=(id)=>{}
-
-
