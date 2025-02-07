@@ -100,7 +100,10 @@ const deleteCustomer=(id)=>{
     let customer=findCustomer(id);
     if(customer){
         customerArray.splice(customerArray.indexOf(customer),1);
-    }
+        alert('customer deleted');
+        return;
+    }else
+        alert('customer not found');
 }
 
 const findAllCustomer =()=>{
