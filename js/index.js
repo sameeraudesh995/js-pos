@@ -64,7 +64,7 @@ const createCustomer=()=>{
     const customer =new Customer(
         $('#name').val(),
         $('#address').val(),
-        $('#salary').val(),
+        parseInt($('#salary').val()),
         $('#nic').val()
     );
     if (customerArray.find(e=>e.nic==customer.nic)){
@@ -76,10 +76,33 @@ const createCustomer=()=>{
     console.log(customerArray);
 }
 
-const findCustomer=()=>{
+const findCustomer=(id)=>{
     const nic=$('#nic').val();
-    const customer=customerArray.find(e=>e.nic==nic);
+    const customer=customerArray.find(e=>e.nic===customer.nic);
     if(customer){
         console.log(customer);
     }
+}
+
+const updateCustomer=(id)=> {
+    let customer = findCustomer(id);
+    if (customer) {
+        $('#name').val(customer.name);
+        $('#address').val(customer.address);
+        $('#salary').val(customer.salary);
+        $('#nic').val(customer.nic)
+    } else {
+        alert('customer not found');
+    }
+}
+
+const deleteCustomer=(id)=>{
+    let customer=findCustomer(id);
+    if(customer){
+        customerArray.splice(customerArray.indexOf(customer),1);
+    }
+}
+
+const findAllCustomer =()=>{
+    console.log(customerArray);
 }
