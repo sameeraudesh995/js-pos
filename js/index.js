@@ -107,5 +107,16 @@ const deleteCustomer=(id)=>{
 }
 
 const findAllCustomer =()=>{
-    console.log(customerArray);
+    $.each(customerArray,function(index,customer){
+
+        let tbody = $('#customerTable');
+
+       let row = $('<tr>');
+       let colName=$('<td>').text(customer.name);
+       let colAddress=$('<td>').text(customer.address);
+       let colSalary=$('<td>').text(customer.salary);
+       let colNic=$('<td>').text(customer.nic);
+       row.append(colName,colAddress,colSalary,colNic);
+       tbody.append(row);
+   })
 }
